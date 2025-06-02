@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobringer - Find Your Dream Job</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Main stylesheet -->
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--====================================
+    HEADER + NAVIGATION
+  =====================================-->
+    <header class="header">
+      <nav class="nav-container">
+        <!-- Logo -->
+        <a class="logo" href="#">
+          <img src="./assets/logonew.svg" alt="log" />
+          <!-- <p>sdf</p> -->
+        </a>
+
+        <!-- Hamburger (mobile only) -->
+        <div id="hamburger" class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Desktop Navigation Menu -->
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="#">Jobs</a></li>
+          <li><a class="nav-link" href="#">Employers</a></li>
+          <li><a class="nav-link" href="#">Blogs</a></li>
+          <li><a class="nav-link" href="#">Pricing</a></li>
+        </ul>
+
+        <!-- Desktop Auth Buttons + Theme Toggle -->
+        <div class="auth-buttons">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <i class="fas fa-moon" id="theme-icon"></i>
+          </button>
+          <a class="btn btn-outline" href="#">Job Seeker Login</a>
+          <a class="btn btn-outline" href="#">Employer Login</a>
+          <a class="btn btn-primary" href="#">Register</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Navigation (hidden by default; toggled by hamburger) -->
+      <div id="mobile-nav" class="mobile-nav">
+        <ul>
+          <li><a class="nav-link" href="#">Jobs</a></li>
+          <li><a class="nav-link" href="#">Employers</a></li>
+          <li><a class="nav-link" href="#">Blogs</a></li>
+          <li><a class="nav-link" href="#">Pricing</a></li>
+        </ul>
+        <div class="mobile-auth-buttons">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <i class="fas fa-moon" id="theme-icon-mobile"></i>
+          </button>
+          <a class="btn btn-outline" href="#">Job Seeker Login</a>
+          <a class="btn btn-outline" href="#">Employer Login</a>
+          <a class="btn btn-primary" href="#">Register</a>
+        </div>
+      </div>
+    </header>
+
+    <!--====================================
+    HERO SECTION
+  =====================================-->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Find Your Dream Job Today</h1>
+        <p>
+          Connect with top employers and discover opportunities that match your
+          skills and aspirations
+        </p>
+        <div class="search-container">
+          <input
+            class="search-input"
+            type="text"
+            placeholder="Job title, keywords, or company"
+          />
+          <input class="search-input" type="text" placeholder="Location" />
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+            Search Jobs
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--====================================
+    FEATURED JOBS (Two-row grid on desktop; 1-per-view on mobile)
+  =====================================-->
+    <section class="featured-jobs">
+      <h2 class="section-title">Featured Jobs</h2>
+
+      <div class="slider-container jobs-slider">
+        <!-- Left arrow -->
+        <button class="slider-arrow left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="slider-content two-row-grid jobs-grid">
+          <!-- Job Card #1 -->
+          <div class="job-card">
+            <div class="job-header">
+              <img
+                class="company-logo"
+                src="assets/google_logo.png"
+                alt="Google Logo"
+              />
+              <div class="job-info">
+                <h3>Senior Software Engineer</h3>
+                <div class="company-name">Google India</div>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Bangalore</span>
+              <span><i class="fas fa-clock"></i> Full-time</span>
+              <span><i class="fas fa-graduation-cap"></i> 5+ years</span>
+            </div>
+            <div class="salary">₹25-35 LPA</div>
+          </div>
+
+          <!-- Job Card #2 -->
+          <div class="job-card">
+            <div class="job-header">
+              <img
+                class="company-logo"
+                src="assets/Microsoft_logo.jpg"
+                alt="Microsoft Logo"
+              />
+              <div class="job-info">
+                <h3>Product Manager</h3>
+                <div class="company-name">Microsoft</div>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Hyderabad</span>
+              <span><i class="fas fa-clock"></i> Full-time</span>
+              <span><i class="fas fa-graduation-cap"></i> 3+ years</span>
+            </div>
+            <div class="salary">₹20-30 LPA</div>
+          </div>
+
+          <!-- Job Card #3 -->
+          <div class="job-card">
+            <div class="job-header">
+              <img
+                class="company-logo"
+                src="assets/Amazon_logo.png"
+                alt="Amazon Logo"
+              />
+              <div class="job-info">
+                <h3>Data Scientist</h3>
+                <div class="company-name">Amazon</div>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Chennai</span>
+              <span><i class="fas fa-clock"></i> Full-time</span>
+              <span><i class="fas fa-graduation-cap"></i> 4+ years</span>
+            </div>
+            <div class="salary">₹18-28 LPA</div>
+          </div>
+
+          <!-- Job Card #4 (duplicate for testing) -->
+          <div class="job-card">
+            <div class="job-header">
+              <img
+                class="company-logo"
+                src="assets/google_logo.png"
+                alt="Google Logo"
+              />
+              <div class="job-info">
+                <h3>Backend Developer</h3>
+                <div class="company-name">Google India</div>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Mumbai</span>
+              <span><i class="fas fa-clock"></i> Contract</span>
+              <span><i class="fas fa-graduation-cap"></i> 2+ years</span>
+            </div>
+            <div class="salary">₹15-20 LPA</div>
+          </div>
+
+          <!-- Job Card #5 -->
+          <div class="job-card">
+            <div class="job-header">
+              <img
+                class="company-logo"
+                src="assets/Microsoft_logo.jpg"
+                alt="Microsoft Logo"
+              />
+              <div class="job-info">
+                <h3>UX/UI Designer</h3>
+                <div class="company-name">Microsoft</div>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Bengaluru</span>
+              <span><i class="fas fa-clock"></i> Full-time</span>
+              <span><i class="fas fa-graduation-cap"></i> 4+ years</span>
+            </div>
+            <div class="salary">₹18-25 LPA</div>
+          </div>
+
+          <!-- Add more job cards as needed… they’ll fill into a two-row grid on desktop -->
+        </div>
+
+        <!-- Right arrow -->
+        <button class="slider-arrow right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!--====================================
+    FEATURED EMPLOYERS (Two-row grid on desktop; logos only)
+  =====================================-->
+    <section class="featured-employers">
+      <h2 class="section-title">Featured Companies</h2>
+
+      <div class="slider-container employers-slider">
+        <!-- Left arrow -->
+        <button class="slider-arrow left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="slider-content two-row-grid employers-grid">
+          <!-- Employer Card #1 (logo only) -->
+          <div class="employer-card">
+            <img
+              class="employer-logo"
+              src="assets/tcs_logo.jpg"
+              alt="TCS Logo"
+            />
+          </div>
+
+          <!-- Employer Card #2 -->
+          <div class="employer-card">
+            <img
+              class="employer-logo"
+              src="assets/infosys_logo.png"
+              alt="Infosys Logo"
+            />
+          </div>
+
+          <!-- Employer Card #3 -->
+          <div class="employer-card">
+            <img
+              class="employer-logo"
+              src="assets/wipro_logo.png"
+              alt="Wipro Logo"
+            />
+          </div>
+
+          <!-- Employer Card #4 -->
+          <div class="employer-card">
+            <img
+              class="employer-logo"
+              src="assets/hcl_logo.jpg"
+              alt="HCL Logo"
+            />
+          </div>
+
+          <!-- Add more employer cards as needed… logos only -->
+        </div>
+
+        <!-- Right arrow -->
+        <button class="slider-arrow right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!--====================================
+    JOB CATEGORIES (Two-row grid on desktop; two-per-row on mobile)
+  =====================================-->
+    <section class="job-categories">
+      <h2 class="section-title">Job Categories</h2>
+
+      <div class="slider-container categories-slider">
+        <!-- Left arrow -->
+        <button class="slider-arrow left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="slider-content two-row-grid categories-grid">
+          <!-- Category Card #1 -->
+          <div class="category-card">
+            <div class="category-name">Software Engineering</div>
+          </div>
+          <!-- Category Card #2 -->
+          <div class="category-card">
+            <div class="category-name">Data Science</div>
+          </div>
+          <!-- Category Card #3 -->
+          <div class="category-card">
+            <div class="category-name">Product Management</div>
+          </div>
+          <!-- Category Card #4 -->
+          <div class="category-card">
+            <div class="category-name">UX / UI Design</div>
+          </div>
+          <!-- Category Card #5 -->
+          <div class="category-card">
+            <div class="category-name">Marketing</div>
+          </div>
+          <!-- Category Card #6 -->
+          <div class="category-card">
+            <div class="category-name">Sales</div>
+          </div>
+          <!-- Category Card #7 -->
+          <div class="category-card">
+            <div class="category-name">Human Resources</div>
+          </div>
+          <!-- Category Card #8 -->
+          <div class="category-card">
+            <div class="category-name">Finance & Accounting</div>
+          </div>
+          <!-- Add more categories as needed… -->
+        </div>
+
+        <!-- Right arrow -->
+        <button class="slider-arrow right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!--====================================
+    JOBS BY LOCATION (Two-row grid on desktop; 2-per-row on mobile)
+  =====================================-->
+    <section class="locations">
+      <h2 class="section-title">Jobs by Location</h2>
+
+      <!-- Tab Buttons -->
+      <div class="location-tabs">
+        <button class="tab-btn active" onclick="showTab('india', this)">
+          Jobs in India
+        </button>
+        <button class="tab-btn" onclick="showTab('international', this)">
+          International Jobs
+        </button>
+      </div>
+
+      <div class="slider-container locations-slider">
+        <!-- Left arrow -->
+        <button class="slider-arrow left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="slider-content two-row-grid locations-grid-wrapper">
+          <!-- India Tab Content -->
+          <div class="tab-content active" id="india-jobs">
+            <div class="locations-grid">
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Mumbai')"
+              >
+                <h3>Mumbai</h3>
+                <p>12,500+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Delhi')"
+              >
+                <h3>Delhi</h3>
+                <p>10,200+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Bangalore')"
+              >
+                <h3>Bangalore</h3>
+                <p>15,800+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Hyderabad')"
+              >
+                <h3>Hyderabad</h3>
+                <p>8,900+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Chennai')"
+              >
+                <h3>Chennai</h3>
+                <p>7,600+ Jobs</p>
+              </div>
+              <div class="location-card" onclick="searchJobsByLocation('Pune')">
+                <h3>Pune</h3>
+                <p>6,400+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Kolkata')"
+              >
+                <h3>Kolkata</h3>
+                <p>4,200+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Ahmedabad')"
+              >
+                <h3>Ahmedabad</h3>
+                <p>3,800+ Jobs</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- International Tab Content -->
+          <div class="tab-content" id="international-jobs">
+            <div class="locations-grid">
+              <div class="location-card" onclick="searchJobsByLocation('USA')">
+                <h3>United States</h3>
+                <p>25,000+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Canada')"
+              >
+                <h3>Canada</h3>
+                <p>8,500+ Jobs</p>
+              </div>
+              <div class="location-card" onclick="searchJobsByLocation('UK')">
+                <h3>United Kingdom</h3>
+                <p>12,200+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Germany')"
+              >
+                <h3>Germany</h3>
+                <p>9,800+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Australia')"
+              >
+                <h3>Australia</h3>
+                <p>6,400+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Singapore')"
+              >
+                <h3>Singapore</h3>
+                <p>4,200+ Jobs</p>
+              </div>
+              <div class="location-card" onclick="searchJobsByLocation('UAE')">
+                <h3>UAE</h3>
+                <p>5,800+ Jobs</p>
+              </div>
+              <div
+                class="location-card"
+                onclick="searchJobsByLocation('Netherlands')"
+              >
+                <h3>Netherlands</h3>
+                <p>3,600+ Jobs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right arrow -->
+        <button class="slider-arrow right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!--====================================
+    STATS SECTION (moved to near-footer)
+  =====================================-->
+    <section class="stats">
+      <h2 class="section-title">Our Stats</h2>
+      <div class="slider-container stats-slider">
+        <!-- Left arrow -->
+        <button class="slider-arrow left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- Scrollable, two-row grid container -->
+        <div class="slider-content two-row-grid stats-grid">
+          <!-- Example stat cards: you can add as many as you like -->
+          <div class="stat-card">
+            <span class="stat-number" data-count="50000">0</span>
+            <div class="stat-label">Jobs Posted</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="25000">0</span>
+            <div class="stat-label">Jobs Filled</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="5000">0</span>
+            <div class="stat-label">Employers</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="100000">0</span>
+            <div class="stat-label">Active Users</div>
+          </div>
+          <!-- Add more stat cards below; they will flow into the same two-row grid -->
+          <div class="stat-card">
+            <span class="stat-number" data-count="120">0</span>
+            <div class="stat-label">Cities Covered</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="350">0</span>
+            <div class="stat-label">Companies</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="78">0</span>
+            <div class="stat-label">Industries</div>
+          </div>
+        </div>
+
+        <!-- Right arrow -->
+        <button class="slider-arrow right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!--====================================
+    MOBILE APP SECTION (moved just before footer)
+  =====================================-->
+    <section class="mobile-app">
+      <div class="app-container">
+        <div class="app-content">
+          <h2>Get the Jobringer Mobile App</h2>
+          <p>
+            Take your job search on the go! Apply to jobs, get notifications,
+            and stay connected with employers anytime, anywhere.
+          </p>
+          <div class="app-buttons">
+            <a class="app-btn" href="#">
+              <i class="fab fa-apple"></i>
+              <div>
+                <div style="font-size: 0.8rem">Download on the</div>
+                <div style="font-weight: bold">App Store</div>
+              </div>
+            </a>
+            <a class="app-btn" href="#">
+              <i class="fab fa-google-play"></i>
+              <div>
+                <div style="font-size: 0.8rem">Get it on</div>
+                <div style="font-weight: bold">Google Play</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="app-mockup">
+          <div class="phone-mockup">
+            <div
+              style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: var(--text-secondary);
+              "
+            >
+              <i class="fas fa-mobile-alt" style="font-size: 4rem"></i>
+              <div style="margin-top: 20px; font-weight: bold">
+                Jobringer App
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--====================================
+    FOOTER
+  =====================================-->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Blogs</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund / Cancellation Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Employers</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © All Rights Reserved @ 2025 Jobtringer Ventures Private Limited.
+      </div>
+    </footer>
+
+    <!--====================================
+    MAIN SCRIPTS
+  =====================================-->
+    <script src="scripts.js"></script>
+  </body>
+</html>
